@@ -10,5 +10,6 @@ namespace abobaAPP
     {
         public static User user { get; set; }
         public static bool isGuest { get; set; }
+        
     }
 }

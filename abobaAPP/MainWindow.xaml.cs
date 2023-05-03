@@ -23,6 +23,8 @@ namespace abobaAPP
         public MainWindow()
         {
             InitializeComponent();
+            loginBox.Text = "loginDEabf2018";
+            passwordBox.Text = "*Tasm+";
         }
 
         private int countMisses = 0;
@@ -68,16 +70,19 @@ namespace abobaAPP
                     SystemContext.user = user;
                     if (user.RoleID == 1)
                     {
+                        SystemContext.isGuest = false;
                         ClientWindow clientWindow = new ClientWindow();
                         this.Close();
                         clientWindow.ShowDialog();
                     }
                     if (user.RoleID == 2)
                     {
+                        SystemContext.isGuest = false;
                         AdminWindow adminWindow = new AdminWindow();
                         this.Close();
                         adminWindow.ShowDialog();
                     }
+                    SystemContext.isGuest = false;
                     ManagerWindow managerWindow = new ManagerWindow();
                     this.Close();
                     managerWindow.ShowDialog();
